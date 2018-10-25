@@ -16,7 +16,7 @@ export class CSInterviewQuestionService {
       }
   ]
 
-  getRandomCSFact() {
+  getRandomCSInterviewQuestion() {
     const randomNum = Math.floor(Math.random() * this.quotes.length)
     return this.quotes[randomNum]
   }
