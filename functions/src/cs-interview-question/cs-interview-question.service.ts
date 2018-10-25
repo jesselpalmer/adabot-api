@@ -7,10 +7,10 @@ export class CSInterviewQuestionService {
       desc: 'Most frequently asked question',
       question: `
         /*
-          * Write a function that takes in a string and returns the most frequently used char ignoring whitespace.
-          * 
-          * Input: 'Today is the greatest day ever!'
-          * Output: 'e'
+        * Write a function that takes in a string and returns the most frequently used char ignoring whitespace.
+        * 
+        * Input: 'Today is the greatest day ever!'
+        * Output: 'e'
         */
        ` 
       }

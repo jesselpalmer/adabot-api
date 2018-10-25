@@ -15,6 +15,6 @@ export const csFacts = functions.https.onRequest((request, response) => {
 });
 
 export const csInterviewQuestion = functions.https.onRequest((request, response) => {
-  const quote = new CSInterviewQuestionService().getRandomCSInterviewQuestion()
+  const quote = new CSInterviewQuestionService().getRandomCSInterviewQuestion().question
   response.send(quote)
 });
