@@ -1,4 +1,4 @@
-export interface Quote {
+export interface CSQuote {
   text: string
   author: string
 }

@@ -1,7 +1,7 @@
 import * as functions from 'firebase-functions'
-import { QuotesService } from './quotes.service'
+import { CSQuotesService } from './cs-quotes'
 
-export const quotes = functions.https.onRequest((request, response) => {
-  const quote = new QuotesService().getRandomQuote()
+export const csQuotes = functions.https.onRequest((request, response) => {
+  const quote = new CSQuotesService().getRandomCsQuote()
   response.send(quote)
 });

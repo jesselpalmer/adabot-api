@@ -1,8 +1,8 @@
-import { Quote } from './quote'
+import { CSQuote } from './cs-quote'
 
-export class QuotesService {
+export class CSQuotesService {
 
-  quotes:Array<Quote> = [
+  quotes:Array<CSQuote> = [
     {
       text: 'The unexamined life is not worth living.', 
       author: 'Socrates'
@@ -13,7 +13,7 @@ export class QuotesService {
     }
   ]
 
-  getRandomQuote() {
+  getRandomCsQuote() {
     const randomNum = Math.floor(Math.random() * this.quotes.length)
     return this.quotes[randomNum].text
   }
