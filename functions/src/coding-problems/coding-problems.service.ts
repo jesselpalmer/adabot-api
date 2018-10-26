@@ -1,21 +1,12 @@
 import { CodingProblem } from './coding-problems'
+import { CodingProblemData } from './coding-problems.data'
 import { SlackMessage } from '../shared/slack-message'
 
 export class CodingProblemsService {
-
-  codingProblems:Array<CodingProblem> = [
-    {
-      desc: 'Most frequently asked question',
-      level: 'easy',
-      question: 'Write a function that takes in a string and returns the most frequently used char ignoring whitespace.',
-      input: 'Today is the greatest day ever!',
-      output: 'e'
-    }
-  ]
-
+  
   private getRandomCodingProblem(): CodingProblem {
-    const randomNum: number = Math.floor(Math.random() * this.codingProblems.length)
-    return this.codingProblems[randomNum]
+    const randomNum: number = Math.floor(Math.random() * CodingProblemData.length)
+    return CodingProblemData[randomNum]
   }
 
   private getFormattedCodingProblem(): string {
