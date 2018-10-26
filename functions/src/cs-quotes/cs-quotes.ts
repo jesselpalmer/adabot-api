@@ -1,4 +1,4 @@
-export interface AdaCSQuote {
+export interface CSQuote {
   text: string
   author: string
 }

@@ -1,9 +1,9 @@
-import { AdaCSQuote } from './ada-cs-quotes'
+import { CSQuote } from './cs-quotes'
 import { SlackMessage } from '../shared/slack-message'
 
-export class AdaCSQuotesService {
+export class CSQuotesService {
 
-  quotes:Array<AdaCSQuote> = [
+  quotes:Array<CSQuote> = [
     {
       text: 'The unexamined life is not worth living.', 
       author: 'Socrates'
@@ -14,13 +14,13 @@ export class AdaCSQuotesService {
     }
   ]
 
-  getRandomAdaCsQuote(): AdaCSQuote {
+  getRandomCsQuote(): CSQuote {
     const randomNum = Math.floor(Math.random() * this.quotes.length)
     return this.quotes[randomNum]
   }
 
-  getAdaCSQuote(): SlackMessage {
-    const quote = this.getRandomAdaCsQuote().text
+  getCSQuote(): SlackMessage {
+    const quote = this.getRandomCsQuote().text
     return { text: quote }
   }
 }

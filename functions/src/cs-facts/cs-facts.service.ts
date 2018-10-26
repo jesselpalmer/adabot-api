@@ -1,9 +1,9 @@
-import { AdaCSFact } from './ada-cs-fact'
+import { CSFact } from './cs-fact'
 import { SlackMessage } from '../shared/slack-message'
 
-export class AdaCSFactsService {
+export class CSFactsService {
 
-  facts:Array<AdaCSFact> = [
+  facts:Array<CSFact> = [
     {
       text: 'MIT has developed a computer software that can identify and distinguish a real smile from a smile of frustration. ', 
     },
@@ -13,13 +13,13 @@ export class AdaCSFactsService {
     }
   ]
 
-  getRandomAdaCSFact() {
+  getRandomCSFact() {
     const randomNum = Math.floor(Math.random() * this.facts.length)
     return this.facts[randomNum]
   }
 
-  getAdaCSFact(): SlackMessage {
-    const fact = this.getRandomAdaCSFact().text
+  getCSFact(): SlackMessage {
+    const fact = this.getRandomCSFact().text
     return { text: fact }
   }
 }

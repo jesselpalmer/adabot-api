@@ -1,20 +1,20 @@
 import * as functions from 'firebase-functions'
 
-import { AdaCSQuotesService } from './ada-cs-quotes'
-import { AdaCSFactsService } from './ada-cs-facts'
-import { AdaCodingProblemsService } from './ada-coding-problems'
+import { CSQuotesService } from './cs-quotes'
+import { CSFactsService } from './cs-facts'
+import { CodingProblemsService } from './coding-problems'
 
-export const adaCSQuote = functions.https.onRequest((request, response) => {
-  const csQuote = new AdaCSQuotesService().getAdaCSQuote()
-  response.send(csQuote)
+export const csQuote = functions.https.onRequest((request, response) => {
+  const quote = new CSQuotesService().getCSQuote()
+  response.send(quote)
 });
 
-export const adaCSFact = functions.https.onRequest((request, response) => {
-  const csFact = new AdaCSFactsService().getAdaCSFact()
-  response.send(csFact)
+export const csFact = functions.https.onRequest((request, response) => {
+  const fact = new CSFactsService().getCSFact()
+  response.send(fact)
 });
 
-export const adaCodingProblem = functions.https.onRequest((request, response) => {
-  const codingProblem = new AdaCodingProblemsService().getAdaCodingProblem()
-  response.send(codingProblem)
+export const codingProblem = functions.https.onRequest((request, response) => {
+  const problem = new CodingProblemsService().getCodingProblem()
+  response.send(problem)
 });

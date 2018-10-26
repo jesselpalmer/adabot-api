@@ -1,9 +1,9 @@
-import { AdaCodingProblem } from './ada-coding-problems'
+import { CodingProblem } from './coding-problems'
 import { SlackMessage } from '../shared/slack-message'
 
-export class AdaCodingProblemsService {
+export class CodingProblemsService {
 
-  codingProblems:Array<AdaCodingProblem> = [
+  codingProblems:Array<CodingProblem> = [
     {
       desc: 'Most frequently asked question',
       level: 'easy',
@@ -13,20 +13,20 @@ export class AdaCodingProblemsService {
     }
   ]
 
-  private getRandomAdaCodingProblem(): AdaCodingProblem {
+  private getRandomCodingProblem(): CodingProblem {
     const randomNum: number = Math.floor(Math.random() * this.codingProblems.length)
     return this.codingProblems[randomNum]
   }
 
-  private getFormattedAdaCodingProblem(): string {
-    const codingProblem: AdaCodingProblem = this.getRandomAdaCodingProblem()
+  private getFormattedCodingProblem(): string {
+    const codingProblem: CodingProblem = this.getRandomCodingProblem()
     const formattedCodingProblem: string = `/**\n *Question*: ${codingProblem.question}\n` +
         `\n*Input*: ${codingProblem.input} \n*Output*: ${codingProblem.output}\n*/`
     return formattedCodingProblem
   }
 
-  getAdaCodingProblem(): SlackMessage {
-    const codingProblem: string = this.getFormattedAdaCodingProblem()
+  getCodingProblem(): SlackMessage {
+    const codingProblem: string = this.getFormattedCodingProblem()
     return { text: codingProblem }
   }
 }
